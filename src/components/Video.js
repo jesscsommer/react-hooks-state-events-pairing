@@ -1,6 +1,18 @@
 import Button from "./Button"
+import { useState } from "react"
 
 const Video = ({ videoObj: { embedUrl, title, views, upvotes, downvotes, createdAt } }) => {
+
+    const [currentUpvotes, setCurrentUpvotes] = useState(upvotes)
+    const [currentDownvotes, setCurrentDownvotes] = useState(downvotes)
+
+    const addUpvote = () => {
+        setCurrentUpvotes(currentUpvotes => currentUpvotes + 1)
+    }
+
+    const addDownvote = () => {
+        setCurrentDownvotes(currentDownvotes => currentDownvotes + 1)
+    }
 
     return (
         <div>
@@ -15,10 +27,8 @@ const Video = ({ videoObj: { embedUrl, title, views, upvotes, downvotes, created
             <h1>{title}</h1>
             <p>{views} | Uploaded {createdAt}</p>
 
-            <Button innerText={upvotes} emoji={<span>👍</span>} /> 
-            <Button innerText={downvotes} emoji={<span>👎</span>} /> 
-            {/* <Button innerText={} emoji={} handleClick={} /> 
-            <Button innerText={} handleClick={} />  */}
+            <Button innerText={currentUpvotes} emoji={<span>👍</span>} handleClick={addUpvote}/> 
+            <Button innerText={currentDownvotes} emoji={<span>👎</span>} handleClick={addDownvote} /> 
 
             <hr></hr>
         </div>
