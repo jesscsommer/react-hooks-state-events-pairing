@@ -1,6 +1,6 @@
 import Button from "./Button"
 
-const Video = ({ videoObj: { embedUrl, title, views, createdAt } }) => {
+const Video = ({ videoObj: { embedUrl, title, views, upvotes, downvotes, createdAt } }) => {
 
     return (
         <div>
@@ -14,6 +14,13 @@ const Video = ({ videoObj: { embedUrl, title, views, createdAt } }) => {
             />
             <h1>{title}</h1>
             <p>{views} | Uploaded {createdAt}</p>
+
+            <Button innerText={upvotes} emoji={<span>👍</span>} /> 
+            <Button innerText={downvotes} emoji={<span>👎</span>} /> 
+            {/* <Button innerText={} emoji={} handleClick={} /> 
+            <Button innerText={} handleClick={} />  */}
+
+            <hr></hr>
         </div>
     )
 }

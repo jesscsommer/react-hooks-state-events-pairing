@@ -1,6 +1,8 @@
-const Button = () => {
+const Button = ({ innerText, emoji, handleClick}) => {
     return (
-        <button></button>
+        <button onClick={handleClick}>
+            {innerText} {emoji}
+        </button>
     )
 }
 
