@@ -30,7 +30,6 @@ const Video = ({ videoObj: { embedUrl, title, views, upvotes, downvotes, created
             <Button innerText={currentUpvotes} emoji={<span>👍</span>} handleClick={addUpvote}/> 
             <Button innerText={currentDownvotes} emoji={<span>👎</span>} handleClick={addDownvote} /> 
 
-            <hr></hr>
         </div>
     )
 }
