@@ -9,7 +9,10 @@ function App() {
   const [videoObj, setVideoObj] = useState({...video})
 
   return (
+    <div className="App">
       <Video videoObj={videoObj} />
+      <CommentList videoObj={videoObj} />
+    </div>
   );
 }
 

@@ -1,19 +1,19 @@
 import Button from "./Button"
 
-const Video = ({ videoObj }) => {
+const Video = ({ videoObj: { embedUrl, title, views, createdAt } }) => {
 
     return (
-        <div className="App">
+        <div>
             <iframe
                 width="919"
                 height="525"
-                src={videoObj.embedUrl}
+                src={embedUrl}
                 frameBorder="0"
                 allowFullScreen
                 title="Thinking in React"
             />
-            <h1>{videoObj.title}</h1>
-            <p>{videoObj.views} | Uploaded {videoObj.createdAt}</p>
+            <h1>{title}</h1>
+            <p>{views} | Uploaded {createdAt}</p>
         </div>
     )
 }
